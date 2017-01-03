@@ -6,17 +6,17 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/yak-yik', function(err, res){
+/*mongoose.connect('mongodb://localhost/yak-yik', function(err, res){
     if(err){
         console.log('DB CONNECTION FAILED '+err);
     }
     else{
         console.log('DB CONNECTION SUCCESS');
     }
-});
+});*/
 
 var routes = require('./routes/index');
-var api = require('./routes/api');
+//var api = require('./routes/api');
 
 var app = express();
 
@@ -33,7 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/api', api);
+//app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
